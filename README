@@ -1,0 +1,9 @@
+README - "main_obspy" branch
+
+Basic implementation of the whole inversion procedure, at least up to the
+inversion, implemented in obspy (21/02/24)
+
+NOTE: in this version, no radiation pattern component is implemented.
+
+All licenses are the same as for the Shakelab project.
+All codes were written by Laura Cataldi. 

@@ -1,0 +1,22 @@
+# ignore some folders
+spectral_modelling/__pycache__
+spectral_modelling/db_create/__pycache_
+spectral_modelling/bin/massdownloader.py
+spectral_modelling/bin/mdtest.py_
+spectral_modelling/bin/mseeddownload.py
+spectral_modelling/bin/__pycache__
+spectral_modelling/bin/xmldownload.sh
+spectral_modelling/data/OGS2019/run1_output
+spectral_modelling/data/OGS2019/sptdb/plots
+spectral_modelling/data/OGS2019/wfdb/plots
+spectral_modelling/db_create/__pycache__
+spectral_modelling/model_and_invert/__pycache__
+spectral_modelling/utils/__pycache__
+spectral_modelling/visualization_tools/visualize_output_residuals.py
+spectral_modelling/visualization_tools/__pycache__
+
+# ignore .idea IDE folder
+.idea
+
+# Package building
+*.egg-info

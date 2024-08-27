@@ -1,0 +1,26 @@
+README - db_create
+-----------------------------------
+
+Container for all utilities needed to create the actual SPTDB (database of
+FAS spectra to be used as input for inversion).
+
+create/update list (=parsers): call parsers to read event, station, pick data and store
+them in the progressive lists (or update them if they already exist, TODO)
+
+step1: parse the progressive lists together with the associated original data
+(and metadata, if traces are uncorrected) and create the WFPOOL with
+all available traces for each event (both for Swave signal and noise, 
+and for two horizontal components)
+
+step2: parse the WFPOOL and apply a set of contraints (SNR, nevsmin, nstamin,
+hypodist) through a recursive filter. Create corresponding lists of 
+events and stations selected for inversion.
+
+step3: parse the lists of selected events and stations and process the 
+corresponding data to create SPTDB, the database containing all spectra 
+selected for inversion.
+
+
+All reference paths are shared and defined inside the utils tool 'config.py'
+(home folder, location of input/output files, location of 
+parameter files, name of the run...).

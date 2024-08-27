@@ -1,0 +1,1824 @@
+<?xml version='1.0' encoding='utf-8'?>
+<q:quakeml xmlns="http://quakeml.org/xmlns/bed/1.2" xmlns:q="http://quakeml.org/xmlns/quakeml/1.2" xmlns:ns0="http://rts.crs.inogs.it/xmlns/ogs/0.1" xmlns:ns1="http://rts.crs.inogs.it/xmlns/catalogo/0.1">
+  <eventParameters publicID="smi:local/11d25cc4-9e52-4447-b0d8-f789a9129232">
+    <event publicID="quakeml:local/event/00001315" ns1:datasource="ogs" ns1:eventid="1315" ns1:eventsource="ogs">
+      <preferredOriginID>quakeml:local/origin/1315</preferredOriginID>
+      <preferredMagnitudeID>quakeml:local/magnitude/2399</preferredMagnitudeID>
+      <type>earthquake</type>
+      <creationInfo>
+        <agencyID>ogs</agencyID>
+        <author>Antelope event2qml process</author>
+        <creationTime>2021-03-02T10:13:34.605000Z</creationTime>
+        <version>1614680014</version>
+      </creationInfo>
+      <origin publicID="quakeml:local/origin/1315" ns1:datasource="ogs" ns1:dataid="1315">
+        <time>
+          <value>2019-07-28T18:33:25.960000Z</value>
+        </time>
+        <latitude>
+          <value>46.4638</value>
+          <uncertainty>0.00271247739602</uncertainty>
+        </latitude>
+        <longitude>
+          <value>13.1497</value>
+          <uncertainty>0.00391901786408</uncertainty>
+        </longitude>
+        <depth>
+          <value>7380.0</value>
+          <uncertainty>600.0</uncertainty>
+        </depth>
+        <quality>
+          <associatedPhaseCount>45</associatedPhaseCount>
+          <usedPhaseCount>45</usedPhaseCount>
+          <standardError>0.18</standardError>
+        </quality>
+        <type>hypocenter</type>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <comment>
+          <text>algorithm: hypo71</text>
+        </comment>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <version>1614680014.57</version>
+        </creationInfo>
+        <originUncertainty>
+          <preferredDescription>horizontal uncertainty</preferredDescription>
+          <minHorizontalUncertainty>300.0</minHorizontalUncertainty>
+          <maxHorizontalUncertainty>300.0</maxHorizontalUncertainty>
+          <azimuthMaxHorizontalUncertainty>0.0</azimuthMaxHorizontalUncertainty>
+        </originUncertainty>
+        <arrival publicID="quakeml:local/arrival/20013/1315" ns0:sta="PLRO">
+          <pickID>quakeml:local/pick/20013</pickID>
+          <phase>P</phase>
+          <azimuth>359.0</azimuth>
+          <distance>0.085</distance>
+          <timeResidual>-0.19</timeResidual>
+          <timeWeight>5.39</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:34.833000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20014/1315" ns0:sta="PLRO">
+          <pickID>quakeml:local/pick/20014</pickID>
+          <phase>S</phase>
+          <azimuth>359.0</azimuth>
+          <distance>0.085</distance>
+          <timeResidual>0.08</timeResidual>
+          <timeWeight>3.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:34.873000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20015/1315" ns0:sta="FUSE">
+          <pickID>quakeml:local/pick/20015</pickID>
+          <phase>P</phase>
+          <azimuth>244.0</azimuth>
+          <distance>0.114</distance>
+          <timeResidual>-0.11</timeResidual>
+          <timeWeight>1.08</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:34.976000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20016/1315" ns0:sta="FUSE">
+          <pickID>quakeml:local/pick/20016</pickID>
+          <phase>S</phase>
+          <azimuth>244.0</azimuth>
+          <distance>0.114</distance>
+          <timeResidual>0.04</timeResidual>
+          <timeWeight>1.1</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.010000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20017/1315" ns0:sta="BOO">
+          <pickID>quakeml:local/pick/20017</pickID>
+          <phase>P</phase>
+          <azimuth>194.0</azimuth>
+          <distance>0.148</distance>
+          <timeResidual>-0.11</timeResidual>
+          <timeWeight>0.9</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.113000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20018/1315" ns0:sta="BOO">
+          <pickID>quakeml:local/pick/20018</pickID>
+          <phase>S</phase>
+          <azimuth>194.0</azimuth>
+          <distance>0.148</distance>
+          <timeResidual>0.13</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.147000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20019/1315" ns0:sta="PTCC">
+          <pickID>quakeml:local/pick/20019</pickID>
+          <phase>P</phase>
+          <azimuth>113.0</azimuth>
+          <distance>0.153</distance>
+          <timeResidual>-0.22</timeResidual>
+          <timeWeight>1.8</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.216000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20020/1315" ns0:sta="PTCC">
+          <pickID>quakeml:local/pick/20020</pickID>
+          <phase>S</phase>
+          <azimuth>113.0</azimuth>
+          <distance>0.153</distance>
+          <timeResidual>-0.03</timeResidual>
+          <timeWeight>1.2</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.249000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20021/1315" ns0:sta="ZOU2">
+          <pickID>quakeml:local/pick/20021</pickID>
+          <phase>P</phase>
+          <azimuth>308.0</azimuth>
+          <distance>0.153</distance>
+          <timeResidual>0.06</timeResidual>
+          <timeWeight>1.08</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.347000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20022/1315" ns0:sta="ZOU2">
+          <pickID>quakeml:local/pick/20022</pickID>
+          <phase>S</phase>
+          <azimuth>308.0</azimuth>
+          <distance>0.153</distance>
+          <timeResidual>0.05</timeResidual>
+          <timeWeight>0.7</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.380000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20023/1315" ns0:sta="CLUD">
+          <pickID>quakeml:local/pick/20023</pickID>
+          <phase>P</phase>
+          <azimuth>268.0</azimuth>
+          <distance>0.185</distance>
+          <timeResidual>-0.11</timeResidual>
+          <timeWeight>1.08</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.490000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20024/1315" ns0:sta="CLUD">
+          <pickID>quakeml:local/pick/20024</pickID>
+          <phase>S</phase>
+          <azimuth>268.0</azimuth>
+          <distance>0.185</distance>
+          <timeResidual>0.02</timeResidual>
+          <timeWeight>0.7</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.523000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20025/1315" ns0:sta="GEPF">
+          <pickID>quakeml:local/pick/20025</pickID>
+          <phase>P</phase>
+          <azimuth>182.0</azimuth>
+          <distance>0.194</distance>
+          <timeResidual>-0.17</timeResidual>
+          <timeWeight>1.2</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.593000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20026/1315" ns0:sta="GEPF">
+          <pickID>quakeml:local/pick/20026</pickID>
+          <phase>S</phase>
+          <azimuth>182.0</azimuth>
+          <distance>0.194</distance>
+          <timeResidual>0.26</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.631000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20027/1315" ns0:sta="VINO">
+          <pickID>quakeml:local/pick/20027</pickID>
+          <phase>P</phase>
+          <azimuth>156.0</azimuth>
+          <distance>0.227</distance>
+          <timeResidual>0.04</timeResidual>
+          <timeWeight>0.9</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.735000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20028/1315" ns0:sta="VINO">
+          <pickID>quakeml:local/pick/20028</pickID>
+          <phase>S</phase>
+          <azimuth>156.0</azimuth>
+          <distance>0.227</distance>
+          <timeResidual>0.14</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.768000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20029/1315" ns0:sta="BAD">
+          <pickID>quakeml:local/pick/20029</pickID>
+          <phase>P</phase>
+          <azimuth>164.0</azimuth>
+          <distance>0.238</distance>
+          <timeResidual>-0.08</timeResidual>
+          <timeWeight>0.9</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.872000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20030/1315" ns0:sta="BAD">
+          <pickID>quakeml:local/pick/20030</pickID>
+          <phase>S</phase>
+          <azimuth>164.0</azimuth>
+          <distance>0.238</distance>
+          <timeResidual>0.11</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:35.905000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20031/1315" ns0:sta="BUA">
+          <pickID>quakeml:local/pick/20031</pickID>
+          <phase>P</phase>
+          <azimuth>184.0</azimuth>
+          <distance>0.248</distance>
+          <timeResidual>0.22</timeResidual>
+          <timeWeight>0.9</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.015000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20032/1315" ns0:sta="BUA">
+          <pickID>quakeml:local/pick/20032</pickID>
+          <phase>S</phase>
+          <azimuth>184.0</azimuth>
+          <distance>0.248</distance>
+          <timeResidual>0.13</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.048000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20033/1315" ns0:sta="MPRI">
+          <pickID>quakeml:local/pick/20033</pickID>
+          <phase>P</phase>
+          <azimuth>207.0</azimuth>
+          <distance>0.251</distance>
+          <timeResidual>0.06</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.152000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20034/1315" ns0:sta="MPRI">
+          <pickID>quakeml:local/pick/20034</pickID>
+          <phase>S</phase>
+          <azimuth>207.0</azimuth>
+          <distance>0.251</distance>
+          <timeResidual>0.07</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.184000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20035/1315" ns0:sta="LSR">
+          <pickID>quakeml:local/pick/20035</pickID>
+          <phase>P</phase>
+          <azimuth>87.0</azimuth>
+          <distance>0.262</distance>
+          <timeResidual>0.08</timeResidual>
+          <timeWeight>1.8</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.289000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20036/1315" ns0:sta="LSR">
+          <pickID>quakeml:local/pick/20036</pickID>
+          <phase>S</phase>
+          <azimuth>87.0</azimuth>
+          <distance>0.262</distance>
+          <timeResidual>0.01</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.321000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20037/1315" ns0:sta="ACOM">
+          <pickID>quakeml:local/pick/20037</pickID>
+          <phase>P</phase>
+          <azimuth>72.0</azimuth>
+          <distance>0.266</distance>
+          <timeResidual>0.22</timeResidual>
+          <timeWeight>2.4</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.426000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20038/1315" ns0:sta="ACOM">
+          <pickID>quakeml:local/pick/20038</pickID>
+          <phase>S</phase>
+          <azimuth>72.0</azimuth>
+          <distance>0.266</distance>
+          <timeResidual>0.14</timeResidual>
+          <timeWeight>1.2</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.458000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20039/1315" ns0:sta="PURA">
+          <pickID>quakeml:local/pick/20039</pickID>
+          <phase>P</phase>
+          <azimuth>262.0</azimuth>
+          <distance>0.287</distance>
+          <timeResidual>0.07</timeResidual>
+          <timeWeight>0.72</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.529000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20040/1315" ns0:sta="PURA">
+          <pickID>quakeml:local/pick/20040</pickID>
+          <phase>S</phase>
+          <azimuth>262.0</azimuth>
+          <distance>0.287</distance>
+          <timeResidual>0.05</timeResidual>
+          <timeWeight>0.7</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.561000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20041/1315" ns0:sta="MORT">
+          <pickID>quakeml:local/pick/20041</pickID>
+          <phase>P</phase>
+          <azimuth>258.0</azimuth>
+          <distance>0.317</distance>
+          <timeResidual>-0.06</timeResidual>
+          <timeWeight>0.36</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.595000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20042/1315" ns0:sta="ROBS">
+          <pickID>quakeml:local/pick/20042</pickID>
+          <phase>P</phase>
+          <azimuth>131.0</azimuth>
+          <distance>0.332</distance>
+          <timeResidual>-0.12</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.665000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20043/1315" ns0:sta="ROBS">
+          <pickID>quakeml:local/pick/20043</pickID>
+          <phase>S</phase>
+          <azimuth>131.0</azimuth>
+          <distance>0.332</distance>
+          <timeResidual>0.17</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.698000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20044/1315" ns0:sta="COLI">
+          <pickID>quakeml:local/pick/20044</pickID>
+          <phase>P</phase>
+          <azimuth>155.0</azimuth>
+          <distance>0.368</distance>
+          <timeResidual>0.09</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.803000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20045/1315" ns0:sta="COLI">
+          <pickID>quakeml:local/pick/20045</pickID>
+          <phase>S</phase>
+          <azimuth>155.0</azimuth>
+          <distance>0.368</distance>
+          <timeResidual>-0.59</timeResidual>
+          <timeWeight>0.6</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.835000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20046/1315" ns0:sta="MYKA">
+          <pickID>quakeml:local/pick/20046</pickID>
+          <phase>P</phase>
+          <azimuth>64.0</azimuth>
+          <distance>0.378</distance>
+          <timeResidual>0.03</timeResidual>
+          <timeWeight>1.19</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.869000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20047/1315" ns0:sta="CADS">
+          <pickID>quakeml:local/pick/20047</pickID>
+          <phase>P</phase>
+          <azimuth>120.0</azimuth>
+          <distance>0.469</distance>
+          <timeResidual>-0.18</timeResidual>
+          <timeWeight>0.58</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.940000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20048/1315" ns0:sta="MLN">
+          <pickID>quakeml:local/pick/20048</pickID>
+          <phase>P</phase>
+          <azimuth>230.0</azimuth>
+          <distance>0.486</distance>
+          <timeResidual>0.3</timeResidual>
+          <timeWeight>0.34</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:36.972000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20049/1315" ns0:sta="CIMO">
+          <pickID>quakeml:local/pick/20049</pickID>
+          <phase>P</phase>
+          <azimuth>253.0</azimuth>
+          <distance>0.511</distance>
+          <timeResidual>-0.06</timeResidual>
+          <timeWeight>0.34</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.006000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20050/1315" ns0:sta="ABTA">
+          <pickID>quakeml:local/pick/20050</pickID>
+          <phase>P</phase>
+          <azimuth>303.0</azimuth>
+          <distance>0.523</distance>
+          <timeResidual>-0.26</timeResidual>
+          <timeWeight>1.02</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.111000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20051/1315" ns0:sta="ABTA">
+          <pickID>quakeml:local/pick/20051</pickID>
+          <phase>S</phase>
+          <azimuth>303.0</azimuth>
+          <distance>0.523</distance>
+          <timeResidual>-0.5</timeResidual>
+          <timeWeight>0.3</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.143000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20052/1315" ns0:sta="SABO">
+          <pickID>quakeml:local/pick/20052</pickID>
+          <phase>P</phase>
+          <azimuth>145.0</azimuth>
+          <distance>0.583</distance>
+          <timeResidual>0.0</timeResidual>
+          <timeWeight>0.28</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.213000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20053/1315" ns0:sta="GORS">
+          <pickID>quakeml:local/pick/20053</pickID>
+          <phase>P</phase>
+          <azimuth>104.0</azimuth>
+          <distance>0.603</distance>
+          <timeResidual>-0.16</timeResidual>
+          <timeWeight>0.55</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.282000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20054/1315" ns0:sta="APGO">
+          <pickID>quakeml:local/pick/20054</pickID>
+          <phase>P</phase>
+          <azimuth>240.0</azimuth>
+          <distance>0.628</distance>
+          <timeResidual>-0.23</timeResidual>
+          <timeWeight>0.32</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.350000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20055/1315" ns0:sta="KBA">
+          <pickID>quakeml:local/pick/20055</pickID>
+          <phase>P</phase>
+          <azimuth>12.0</azimuth>
+          <distance>0.629</distance>
+          <timeResidual>0.18</timeResidual>
+          <timeWeight>3.25</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.383000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20056/1315" ns0:sta="AFL">
+          <pickID>quakeml:local/pick/20056</pickID>
+          <phase>P</phase>
+          <azimuth>275.0</azimuth>
+          <distance>0.676</distance>
+          <timeResidual>0.66</timeResidual>
+          <timeWeight>0.32</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.453000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <arrival publicID="quakeml:local/arrival/20057/1315" ns0:sta="JAVS">
+          <pickID>quakeml:local/pick/20057</pickID>
+          <phase>P</phase>
+          <azimuth>132.0</azimuth>
+          <distance>0.853</distance>
+          <timeResidual>-0.18</timeResidual>
+          <timeWeight>0.25</timeWeight>
+          <earthModelID>quakeml:local/earthmodel/</earthModelID>
+          <creationInfo>
+            <creationTime>2021-03-02T10:13:37.522000Z</creationTime>
+          </creationInfo>
+        </arrival>
+        <ns0:feregion>AUSTRIA</ns0:feregion>
+      </origin>
+      <magnitude publicID="quakeml:local/magnitude/2398">
+        <mag>
+          <value>2.4</value>
+          <uncertainty>0.1</uncertainty>
+        </mag>
+        <type>md</type>
+        <originID>quakeml:local/origin/1315</originID>
+        <stationCount>13</stationCount>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.622000Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <magnitude publicID="quakeml:local/magnitude/2399">
+        <mag>
+          <value>1.99</value>
+          <uncertainty>0.28</uncertainty>
+        </mag>
+        <type>ml</type>
+        <originID>quakeml:local/origin/1315</originID>
+        <stationCount>23</stationCount>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.639000Z</creationTime>
+        </creationInfo>
+      </magnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/PLRO" ns0:sta="PLRO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.4</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.714000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/PLRO" ns0:sta="PLRO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.89</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.743000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/FUSE" ns0:sta="FUSE">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.1</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.908000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/FUSE" ns0:sta="FUSE">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.84</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.925000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/BOO" ns0:sta="BOO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.3</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.045000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/BOO" ns0:sta="BOO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.24</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.062000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/PTCC" ns0:sta="PTCC">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.98</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.182000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/ZOU2" ns0:sta="ZOU2">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.277000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/ZOU2" ns0:sta="ZOU2">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.93</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.296000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/CLUD" ns0:sta="CLUD">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.3</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.414000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/CLUD" ns0:sta="CLUD">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.68</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.433000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/GEPF" ns0:sta="GEPF">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.0</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.557000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/VINO" ns0:sta="VINO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.665000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/VINO" ns0:sta="VINO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.18</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.684000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/BAD" ns0:sta="BAD">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.802000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/BAD" ns0:sta="BAD">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.91</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.821000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/BUA" ns0:sta="BUA">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.4</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.939000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/BUA" ns0:sta="BUA">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.08</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.964000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/MPRI" ns0:sta="MPRI">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.4</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.082000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/MPRI" ns0:sta="MPRI">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.91</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.101000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/LSR" ns0:sta="LSR">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.219000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/LSR" ns0:sta="LSR">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.03</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.237000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/ACOM" ns0:sta="ACOM">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.4</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.356000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/ACOM" ns0:sta="ACOM">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.92</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.375000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/PURA" ns0:sta="PURA">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.49</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.493000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/ROBS" ns0:sta="ROBS">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.41</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.630000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/COLI" ns0:sta="COLI">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.732000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/COLI" ns0:sta="COLI">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.14</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.751000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/CADS" ns0:sta="CADS">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.69</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.903000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2398/ABTA" ns0:sta="ABTA">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.5</value>
+        </mag>
+        <type>md</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.040000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/ABTA" ns0:sta="ABTA">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.53</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.059000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/SABO" ns0:sta="SABO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.19</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.177000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/GORS" ns0:sta="GORS">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.07</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.246000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/APGO" ns0:sta="APGO">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.69</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.314000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/AFL" ns0:sta="AFL">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>1.76</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.417000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <stationMagnitude publicID="quakeml:local/magnitude/station/2399/JAVS" ns0:sta="JAVS">
+        <originID>quakeml:local/origin/1315</originID>
+        <mag>
+          <value>2.32</value>
+        </mag>
+        <type>ml</type>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.486000Z</creationTime>
+        </creationInfo>
+      </stationMagnitude>
+      <pick publicID="quakeml:local/pick/20013">
+        <time>
+          <value>2019-07-28T18:33:27.820000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="PLRO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>359.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.677000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20014">
+        <time>
+          <value>2019-07-28T18:33:29.690000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="PLRO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>359.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.857000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20015">
+        <time>
+          <value>2019-07-28T18:33:28.360000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="FUSE" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>244.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>positive</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.891000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20016">
+        <time>
+          <value>2019-07-28T18:33:30.470000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="FUSE" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>244.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:34.993000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20017">
+        <time>
+          <value>2019-07-28T18:33:28.940000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BOO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>194.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.028000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20018">
+        <time>
+          <value>2019-07-28T18:33:31.580000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BOO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>194.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.130000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20019">
+        <time>
+          <value>2019-07-28T18:33:28.900000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="IV" stationCode="PTCC" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>113.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.165000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20020">
+        <time>
+          <value>2019-07-28T18:33:31.560000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="IV" stationCode="PTCC" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>113.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.233000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20021">
+        <time>
+          <value>2019-07-28T18:33:29.200000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="ZOU2" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>308.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.262000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20022">
+        <time>
+          <value>2019-07-28T18:33:31.660000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="ZOU2" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>308.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.364000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20023">
+        <time>
+          <value>2019-07-28T18:33:29.600000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="CLUD" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>268.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.393000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20024">
+        <time>
+          <value>2019-07-28T18:33:32.650000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="CLUD" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>268.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.507000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20025">
+        <time>
+          <value>2019-07-28T18:33:29.690000Z</value>
+          <uncertainty>0.1</uncertainty>
+        </time>
+        <waveformID networkCode="RF" stationCode="GEPF" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>182.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>positive</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.542000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20026">
+        <time>
+          <value>2019-07-28T18:33:33.160000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="RF" stationCode="GEPF" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>182.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.616000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20027">
+        <time>
+          <value>2019-07-28T18:33:30.490000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="NI" stationCode="VINO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>156.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.650000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20028">
+        <time>
+          <value>2019-07-28T18:33:34.090000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="NI" stationCode="VINO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>156.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.753000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20029">
+        <time>
+          <value>2019-07-28T18:33:30.590000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BAD" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>164.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.787000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20030">
+        <time>
+          <value>2019-07-28T18:33:34.450000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BAD" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>164.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.890000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20031">
+        <time>
+          <value>2019-07-28T18:33:31.060000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BUA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>184.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:35.924000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20032">
+        <time>
+          <value>2019-07-28T18:33:34.770000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="BUA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>184.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.032000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20033">
+        <time>
+          <value>2019-07-28T18:33:30.950000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="MPRI" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>207.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.066000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20034">
+        <time>
+          <value>2019-07-28T18:33:34.800000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="MPRI" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>207.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.169000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20035">
+        <time>
+          <value>2019-07-28T18:33:31.170000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="LSR" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>87.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>positive</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.203000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20036">
+        <time>
+          <value>2019-07-28T18:33:35.100000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="LSR" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>87.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.306000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20037">
+        <time>
+          <value>2019-07-28T18:33:31.390000Z</value>
+          <uncertainty>0.1</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="ACOM" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>72.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.340000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20038">
+        <time>
+          <value>2019-07-28T18:33:35.370000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="ACOM" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>72.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.443000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20039">
+        <time>
+          <value>2019-07-28T18:33:31.630000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="NI" stationCode="PURA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>262.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.477000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20040">
+        <time>
+          <value>2019-07-28T18:33:35.980000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="NI" stationCode="PURA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>262.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.546000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20041">
+        <time>
+          <value>2019-07-28T18:33:32.050000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="RF" stationCode="MORT" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>258.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.580000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20042">
+        <time>
+          <value>2019-07-28T18:33:32.270000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="SL" stationCode="ROBS" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>131.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.614000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20043">
+        <time>
+          <value>2019-07-28T18:33:37.580000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="SL" stationCode="ROBS" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>131.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.683000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20044">
+        <time>
+          <value>2019-07-28T18:33:33.150000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="COLI" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>155.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.717000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20045">
+        <time>
+          <value>2019-07-28T18:33:38.000000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="COLI" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>155.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.820000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20046">
+        <time>
+          <value>2019-07-28T18:33:33.280000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OE" stationCode="MYKA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>64.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.854000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20047">
+        <time>
+          <value>2019-07-28T18:33:34.800000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="SL" stationCode="CADS" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>120.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.888000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20048">
+        <time>
+          <value>2019-07-28T18:33:35.580000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="MLN" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>230.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.957000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20049">
+        <time>
+          <value>2019-07-28T18:33:35.690000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="CIMO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>253.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:36.991000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20050">
+        <time>
+          <value>2019-07-28T18:33:35.710000Z</value>
+          <uncertainty>0.2</uncertainty>
+        </time>
+        <waveformID networkCode="OE" stationCode="ABTA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>303.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <polarity>negative</polarity>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.025000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20051">
+        <time>
+          <value>2019-07-28T18:33:43.290000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OE" stationCode="ABTA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>303.0</value>
+        </backazimuth>
+        <phaseHint>S</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.128000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20052">
+        <time>
+          <value>2019-07-28T18:33:37.120000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="SABO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>145.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.162000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20053">
+        <time>
+          <value>2019-07-28T18:33:37.340000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="SL" stationCode="GORS" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>104.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.230000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20054">
+        <time>
+          <value>2019-07-28T18:33:37.730000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="APGO" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>240.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.299000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20055">
+        <time>
+          <value>2019-07-28T18:33:38.160000Z</value>
+          <uncertainty>0.5</uncertainty>
+        </time>
+        <waveformID networkCode="OE" stationCode="KBA" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>12.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.367000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20056">
+        <time>
+          <value>2019-07-28T18:33:39.540000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="OX" stationCode="AFL" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>275.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.402000Z</creationTime>
+        </creationInfo>
+      </pick>
+      <pick publicID="quakeml:local/pick/20057">
+        <time>
+          <value>2019-07-28T18:33:42.060000Z</value>
+          <uncertainty>1.0</uncertainty>
+        </time>
+        <waveformID networkCode="SL" stationCode="JAVS" locationCode="" channelCode="">quakeml:local/waveform/</waveformID>
+        <backazimuth>
+          <value>132.0</value>
+        </backazimuth>
+        <onset>emergent</onset>
+        <phaseHint>P</phaseHint>
+        <evaluationMode>manual</evaluationMode>
+        <evaluationStatus>reviewed</evaluationStatus>
+        <creationInfo>
+          <author>ogsbulletin</author>
+          <creationTime>2021-03-02T10:13:37.470000Z</creationTime>
+        </creationInfo>
+      </pick>
+    </event>
+  </eventParameters>
+</q:quakeml>
