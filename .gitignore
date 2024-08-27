@@ -2,7 +2,7 @@
 spectral_modelling/__pycache__
 spectral_modelling/db_create/__pycache_
 spectral_modelling/bin/massdownloader.py
-spectral_modelling/bin/mdtest.py_
+spectral_modelling/bin/mdtest.py
 spectral_modelling/bin/mseeddownload.py
 spectral_modelling/bin/__pycache__
 spectral_modelling/bin/xmldownload.sh

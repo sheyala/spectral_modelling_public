@@ -22,7 +22,7 @@ To install spectral_modelling in developer mode, first create a python environme
 
 or
 
-```python3.10 -m venv /path/to//specmodconda```\
+```python3.10 -m venv /path/to/specmodconda```\
 ```source /path/to/specmodconda/bin/activate```
 
 Then install in editable mode from the fetched repository, e.g.:
