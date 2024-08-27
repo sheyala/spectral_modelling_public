@@ -25,7 +25,7 @@ or
 ```python3.10 -m venv /path/to//specmodconda```\
 ```source /path/to/specmodconda/bin/activate```
 
-Then install in editable mode from the fetched repository, e.g.:\
+Then install in editable mode from the fetched repository, e.g.:
 
 ```pip install  --use-pep517 --editable .```
 
@@ -160,3 +160,8 @@ If it runs successfully, the function will print a message and produce a folder 
 6.	***wrap_function.py***: this module contains the actual call to the minimizer. It should not be invoked per se, as it's safer to use inversion.py instead. The actual inversion is performed by the *minimizer_tool()* function. Please note that here you have to define the constraint condition you wish to apply for the site reference, if you use more than one station. Currently, the only implemented condition is the average over all stations on soil class 'A'; the corresponding dictionary is defined inside the constants.py module, remember to update it if you use your own set of stations. The other function, *minimizer_wrapper()*, handles the inversion parameters in order to keep fixed the ones you requested through the *Params.vary* features.
 
 7.	***siteampl.py***: after the main inversion is performed, the *fdsiteampl()* module here calculates the frequency-dependent site functions from the inversion residuals. It saves the results in the corresponding folder where all the results for the chosen run and configuration are stored; you can set the option *plot*=True to also visually inspect the resulting site functions. Please note that at the moment the calculated site functions at some frequencies (usually the lowermost or uppermost ones) could be unreliable, as the SNR criterion was not applied frequency-wise. In the next release this feature will be added and all the related issues should be solved.
+
+
+## References
+
+Laura Cataldi, Valerio Poggi, Giovanni Costa, Stefano Parolai, Benjamin Edwards, Parametric spectral inversion of seismic source, path and site parameters: application to northeast Italy, Geophysical Journal International, Volume 232, Issue 3, March 2023, Pages 1926–1943, https://doi.org/10.1093/gji/ggac431
