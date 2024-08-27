@@ -17,7 +17,7 @@ setuptools.setup(
         'Topic :: Scientific/Engineering',
         'Intended Audience :: Science/Research'
     ],
-    python_requires='==3.9.*,==3.10.*',
+    python_requires='>=3.6.*,!=3.12.*',
     install_requires=[
         'setuptools>=64',
         'numpy',
