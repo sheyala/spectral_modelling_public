@@ -16,18 +16,21 @@ All codes were written by Laura Cataldi.
 
 ## Installation
 
-To install spectral_modelling in developer mode, first create a python environment, e.g.:
-```conda create -n specmodconda python=3.10```
+To install spectral_modelling in developer mode, first create a python environment, e.g.:\
+```conda create -n specmodconda python=3.10```\
 ```conda activate specmodconda```
 
 or
 
-```python3.10 -m venv /path/to//specmodconda```
+```python3.10 -m venv /path/to//specmodconda```\
 ```source /path/to/specmodconda/bin/activate```
 
-Then install in editable mode from the fetched repository, e.g.:
+Then install in editable mode from the fetched repository, e.g.:\
+
 ```pip install  --use-pep517 --editable .```
+
 or
+
 ```python -m pip install --use-pep517 --editable .```
 
 Please remember that the code is tested only for python=3.9 and python=3.10.
