@@ -17,14 +17,14 @@ setuptools.setup(
         'Topic :: Scientific/Engineering',
         'Intended Audience :: Science/Research'
     ],
-    python_requires='>=3.6.*,!=3.12.*',
+    python_requires='>=3.6,!=3.12.*',
     install_requires=[
         'setuptools>=64',
-        'numpy',
+        'numpy==1.26',
         'scipy==1.12.0',
-        'shapely',
-        'matplotlib',
-        'pandas',
+        'shapely==2.0.4',
+        'matplotlib==3.9',
+        'pandas==2.2.2',
         'obspy==1.4.0'
     ]
 )
