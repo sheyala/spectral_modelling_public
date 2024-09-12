@@ -100,40 +100,36 @@ def create_sptpkl(inpath_wf=cfg.WFDBPATH, outpath=cfg.SPTDBPATH,
         mag = evinv[evid][6]
 
         # ----------------------------------------------------------------------
-        # for signal, R
+        # for signal and noise, R
         spt_signal_r = Spectrum(orid=orid, sta=sta, chan=chan, 
                                 hypdist=hypdist, ml=ml, mag=mag,
                                 freq_lims=freqlims)
-        utils.fas_calc_and_store(wf_signal_r, spt_signal_r, i)
-        pickle.dump(spt_signal_r, out_signal_r, 
-                    protocol=pickle.HIGHEST_PROTOCOL)
-
-        # ----------------------------------------------------------------------
-        # for signal, T
-        spt_signal_t = Spectrum(orid=orid, sta=sta, chan=chan, 
-                                hypdist=hypdist, ml=ml, mag=mag, 
-                                freq_lims=freqlims)
-        utils.fas_calc_and_store(wf_signal_t, spt_signal_t, i)
-        pickle.dump(spt_signal_t, out_signal_t, 
-                    protocol=pickle.HIGHEST_PROTOCOL)
-
-        # ----------------------------------------------------------------------
-        # for noise, R
         spt_noise_r = Spectrum(orid=orid, sta=sta, chan=chan,
                                hypdist=hypdist, ml=ml, mag=mag, 
                                freq_lims=freqlims)
-        utils.fas_calc_and_store(wf_noise_r, spt_noise_r, i)
-        pickle.dump(spt_noise_r, out_noise_r, 
-                    protocol=pickle.HIGHEST_PROTOCOL)
+        r_out = utils.fas_calc_and_store(wf_signal_r, wf_noise_r, 
+                                         spt_signal_r, spt_noise_r, i)
+        if r_out:
+            pickle.dump(spt_signal_r, out_signal_r, 
+                        protocol=pickle.HIGHEST_PROTOCOL)
+            pickle.dump(spt_noise_r, out_noise_r, 
+                        protocol=pickle.HIGHEST_PROTOCOL)
 
         # ----------------------------------------------------------------------
-        # for noise, T
+        # for signal and noise, T
+        spt_signal_t = Spectrum(orid=orid, sta=sta, chan=chan, 
+                                hypdist=hypdist, ml=ml, mag=mag, 
+                                freq_lims=freqlims)
         spt_noise_t = Spectrum(orid=orid, sta=sta, chan=chan, 
                                hypdist=hypdist, ml=ml, mag=mag, 
                                freq_lims=freqlims)
-        utils.fas_calc_and_store(wf_noise_t, spt_noise_t, i)
-        pickle.dump(spt_noise_t, out_noise_t, 
-                    protocol=pickle.HIGHEST_PROTOCOL)
+        t_out = utils.fas_calc_and_store(wf_signal_t, wf_noise_t,
+                                         spt_signal_t, spt_noise_t, i)
+        if t_out:
+            pickle.dump(spt_signal_t, out_signal_t, 
+                        protocol=pickle.HIGHEST_PROTOCOL)
+            pickle.dump(spt_noise_t, out_noise_t, 
+                        protocol=pickle.HIGHEST_PROTOCOL)
 
     out_signal_r.close()
     out_signal_t.close()

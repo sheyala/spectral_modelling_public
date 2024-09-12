@@ -58,7 +58,11 @@ PREFILT = [0.05, 0.1, 95., 100.] #optional pre-filter for response removal
 #configuration for STEP 2 
 #apply constraints on the dataset and filter recursively
 #-----------------------------------------------
-SNRMIN = 5.
+SNRMIN = 3.
+F0_SNR = 2.
+F1_SNR = 15.
+FMINSTOP = 10
+FMAXSTOP = 10
 MIN_EVS = 3
 MIN_STAS = 3
 MIN_HYPODIST = 5.

@@ -27,11 +27,11 @@ or
 
 Then install in editable mode from the fetched repository, e.g.:
 
-```pip install  --use-pep517 --editable .```
+```python -m pip install --use-pep517 --editable .```
 
 or
 
-```python -m pip install --use-pep517 --editable .```
+```pip install  --use-pep517 --editable .```
 
 Please remember that the code is tested only for python=3.9 and python=3.10.
 
@@ -82,11 +82,11 @@ This step read the input csv tables containing all the available associations an
 
 Recognized formats for the database are either SAC files or miniseed files; the SAC files must be already corrected for instrumental correction, while mseed files can be corrected on-the-go if the response information is provided.
 
-The output waveform pool (**WFPOOL** in the graph; defined in *config.WFDBPATH*) consists of a set of pickle objects, one for each event, containing all available waveforms for that event (regardless of their quality, at this step). For each evid, the output pickle file contains all the signal and noise waveform available for that event. For each evid, all available recordings are rotated to the radial/transverse components, which are then cut into S-signal and pre-P noise windows using pick times from the association table. Then all waveforms associated to the event are stored in a dictionary containing a Stream each for R component of signal, T component of signal, R component of noise and T component of noise, as well as a list of signal-to-noise (SNR) scores for both R and T cases, a list of the corresponding station codes, and a list of the corresponding hypocentral distances.
+The output waveform pool (**WFPOOL** in the graph; defined in *config.WFDBPATH*) consists of a set of pickle objects, one for each event, containing all available waveforms for that event (regardless of their quality, at this step). For each evid, the output pickle file contains all the signal and noise waveform available for that event. For each evid, all available recordings are rotated to the radial/transverse components, which are then cut into S-signal and pre-P noise windows using pick times from the association table. Then all waveforms associated to the event are stored in a dictionary containing a Stream each for R component of signal, T component of signal, R component of noise and T component of noise, as well as a list of the corresponding station codes, and a list of the orresponding hypocentral distances.
 
 ### 2.	STEP 2 – db_create/step2_filter_run.py
 
-In this step we apply some constraints on our initial databases of waveforms, events and stations. First the WFPOOL is parsed and an initial filter is applied based on SNR score and on hypocentral distance (thresholds are set in *config.SNRMIN*, *config.MIN_HYPODIST*, *config.MAX_HYPODIST*). Then a recursive filter is applied to ensure that each event has a minimum of associated recordings (*nstassoc*; threshold set in *config.MIN_STAS*) and each station has a minimum of associated recorded events (*nevassoc*; threshold set in *config.MIN_EVS*), for inversion stability. New, filtered databases of events and stations to be used for inversion are output as csv files, following a similar syntax as the initial ones:
+In this step we apply some constraints on our initial databases of waveforms, events and stations. First the WFPOOL is parsed and an initial filter is applied based on hypocentral distance (thresholds are set in *config.MIN_HYPODIST*, *config.MAX_HYPODIST*). Then a recursive filter is applied to ensure that each event has a minimum of associated recordings (*nstassoc*; threshold set in *config.MIN_STAS*) and each station has a minimum of associated recorded events (*nevassoc*; threshold set in *config.MIN_EVS*), for inversion stability. New, filtered databases of events and stations to be used for inversion are output as csv files, following a similar syntax as the initial ones:
 
 for stations: 
 ```
@@ -107,7 +107,7 @@ Output file will be named *OGS2019_stas_run1.txt*, *OGS2019_events_run1.txt*, *R
 ### 3.	STEP 3 – db_create/step3_save_sptdb.py
 > this section still has to be improved in terms of performance
 
-In this step we select only those waveforms in WFPOOL which are identified as usable for inversion by the filtered event and station lists produced by Step 2. For each waveform we calculate the Fourier amplitude spectrum and store it in a *utils.Spectrum()* class object, which contains also information on orid, station, distance, etc. The resulting Spectrum() items are grouped into four lists, one for each of the R-component signal, T-component signal, R-component noise and T-component noise. Each list is then saved as a pickle object, composing the output SPTDB (spectrum database; defined in *config.SPTDBPATH*) which will be the input to the inversion tool. We can generate plots for all the obtained spectra by using the *visualization_tools/plot_sptdb.py* utility.
+In this step we select only those waveforms in WFPOOL which are identified as usable for inversion by the filtered event and station lists produced by Step 2. For each waveform we calculate the Fourier amplitude spectrum and store it in a *utils.Spectrum()* class object, which contains also information on orid, station, distance, etc. The resulting Spectrum() items are grouped into four lists, one for each of the R-component signal, T-component signal, R-component noise and T-component noise. The lists regarding each component are processed together in order to calculate the range of frequencies with signal-to-nois ratio over the threshold (set in *config.SNRMIN*); for each spectrum, a set of [f_min, f_max] is stored denoting the minimum and maximum frequency with sufficent SNR score, together with the corresponding boolean array. Each list is then saved as a pickle object, composing the output SPTDB (spectrum database; defined in *config.SPTDBPATH*) which will be the input to the inversion tool. We can generate plots for all the obtained spectra by using the *visualization_tools/plot_sptdb.py* utility.
 
 ## Second part: parmetric inversion
 

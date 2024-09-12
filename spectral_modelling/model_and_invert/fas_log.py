@@ -306,7 +306,8 @@ def ln_fas(p_in, fcn_args, diff=False):
     N_ev = stat_p.N_ev
     N_sta = stat_p.N_sta
     N_freq = stat_p.N_freq
-    lndata = np.log(stat_p.data)
+    if stat_p.data:
+        lndata = np.log(stat_p.data)
     scale = stat_p.scale
 
     if not (isinstance(p_in, np.ndarray)):
@@ -363,6 +364,6 @@ def handle_func(p_in, *fcn_args):
 
     cost = (np.square(diff)*weights).sum()
     #possibly normalize by M too, as not all values are used
-    cost = cost/(stat_p.N_ev*stat_p.N_sta*stat_p.N_freq)
-
+    cost = cost/(len(np.where(stat_p.M == 1)[0]))
+    # cost = cost/(stat_p.N_ev*stat_p.N_sta*stat_p.N_freq)
     return cost

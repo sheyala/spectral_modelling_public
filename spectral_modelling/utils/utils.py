@@ -9,6 +9,7 @@ from obspy.signal.konnoohmachismoothing import konno_ohmachi_smoothing
 import scipy.fftpack as fftpack
 from obspy import Stream, Trace
 from scipy.interpolate import CubicSpline
+from spectral_modelling.db_create.f1f2 import f1f2
 
 
 # -----------------------------------------------------------------------------
@@ -128,45 +129,71 @@ def getSNR(S, N):
     return SNRdB
 
 
-def fas_calc_and_store(stream, spectrum, index):
+def fas_calc_and_store(stream_s, stream_n, spectrum_s, spectrum_n, index):
     """
     Utility to calculate FAS of given Stream[index] and store it in 
-    the given Spectrum object
+    the given Spectrum object, for corresponding signal and noise streams
     """
-    checkext_stream(stream)
-    checkext_spectrum(spectrum)
+    checkext_stream(stream_s)
+    checkext_stream(stream_n)
+    checkext_spectrum(spectrum_s)
+    checkext_spectrum(spectrum_n)
+    freqs = cfg.FREQS
 
-    tr = stream[index]
-    npts = tr.stats["npts"]
-    dt = tr.stats["delta"]
-
-
+    # 1 - signal
+    tr_s = stream_s[index]
+    npts_s = tr_s.stats["npts"]
+    dt_s = tr_s.stats["delta"]
     # Calculate amplitude fft spectra
-    nfrqs = int(npts/2)+1 if (npts % 2) == 0 else int((npts+1)/2)
-    frq = np.abs(np.fft.fftfreq(npts, dt))[:nfrqs]
-
-
-    # #TODO check if dtype can be set directly in scipy.fftpack.fft
-    # tr_fft = np.abs(fftpack.fft(tr)[:nfrqs], dtype='float64')/nfrqs
-
-    ################
-    hw = np.array([(1 - np.cos(2 * _c.PI * j / npts))/2. 
-                    for j in range(npts)])
-    tr_fft = np.sqrt(2*((np.abs(fftpack.fft(tr.data)[:nfrqs]))**2)
-                        / (np.sum(hw**2)) / dt)
-    ###############
-
+    nfrqs_s = int(npts_s/2)+1 if (npts_s % 2) == 0 else int((npts_s+1)/2)
+    frq_s = np.abs(np.fft.fftfreq(npts_s, dt_s))[:nfrqs_s]
+    hw_s = np.array([(1 - np.cos(2 * _c.PI * j / npts_s))/2. 
+                    for j in range(npts_s)])
+    tr_s_fft = np.sqrt(2*((np.abs(fftpack.fft(tr_s.data)[:nfrqs_s]))**2)
+                        / (np.sum(hw_s**2)) / dt_s)
     # Calculate KO smoothed fft and resample it over FREQS
-    sm_fft = konno_ohmachi_smoothing(tr_fft, frq, bandwidth=cfg.KO_B,
+    sm_s_fft = konno_ohmachi_smoothing(tr_s_fft, frq_s, bandwidth=cfg.KO_B,
                                      normalize=True)
-    cs_sm = CubicSpline(frq, sm_fft)
+    cs_s_sm = CubicSpline(frq_s, sm_s_fft)
 
-    spectrum.freq = frq
-    spectrum.amp = tr_fft
-    spectrum.sm_freq = cfg.FREQS
-    spectrum.sm_amp = cs_sm(cfg.FREQS)
-    spectrum.fbool = np.ones_like(cfg.FREQS)
+    # 2 - noise
+    tr_n = stream_n[index]
+    npts_n = tr_n.stats["npts"]
+    dt_n = tr_n.stats["delta"]
+    # Calculate amplitude fft spectra
+    nfrqs_n = int(npts_n/2)+1 if (npts_n % 2) == 0 else int((npts_n+1)/2)
+    frq_n = np.abs(np.fft.fftfreq(npts_n, dt_n))[:nfrqs_n]
+    hw_n = np.array([(1 - np.cos(2 * _c.PI * j / npts_n))/2. 
+                    for j in range(npts_n)])
+    tr_n_fft = np.sqrt(2*((np.abs(fftpack.fft(tr_n.data)[:nfrqs_n]))**2)
+                        / (np.sum(hw_n**2)) / dt_n)
+    # Calculate KO smoothed fft and resample it over FREQS
+    sm_n_fft = konno_ohmachi_smoothing(tr_n_fft, frq_n, bandwidth=cfg.KO_B,
+                                     normalize=True)
+    cs_n_sm = CubicSpline(frq_n, sm_n_fft)
 
+    flims = f1f2(cs_s_sm(freqs), cs_n_sm(freqs), freqs)
+    if flims is not None:
+        fbools = np.zeros_like(freqs)
+        index1 = [i for i in range(len(freqs)) if (freqs[i] >= flims[0]) and (freqs[i] <= flims[1])]
+        fbools[index1] = 1
+
+        spectrum_s.freq = frq_s
+        spectrum_s.amp = tr_s_fft
+        spectrum_s.sm_freq = freqs
+        spectrum_s.sm_amp = cs_s_sm(freqs)
+        spectrum_s.fbool = fbools 
+        spectrum_s.freq_lims = flims
+
+        spectrum_n.freq = frq_n
+        spectrum_n.amp = tr_n_fft
+        spectrum_n.sm_freq = freqs
+        spectrum_n.sm_amp = cs_n_sm(freqs)
+        spectrum_n.fbool = fbools 
+        spectrum_n.freq_lims = flims
+        return 1
+
+    return 0
 
 # -----------------------------------------------------------------------------
 # Utility for re-building whole Params object  (from fixed and free

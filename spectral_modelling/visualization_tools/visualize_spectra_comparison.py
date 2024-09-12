@@ -62,8 +62,6 @@ def plot_spectra_comparison(runname=cfg.RUNNAME,
     N_gamma = p_true.gamma.size
     N_delta = p_true.delta.size
 
-    # stat_p = myC.StaticParams(M=stat_p.M, F=stat_p.F, R=stat_p.R, N_ev=N_i, N_sta=N_j, N_freq=N_k) #, N_gamma=N_gamma, N_delta=N_delta)
-
     with open(runpath + '/' + run_name + '/' + run_name +'.txt', 'r') as fname:
         pars_slsqp = []
         for line in fname:
@@ -76,9 +74,9 @@ def plot_spectra_comparison(runname=cfg.RUNNAME,
 
     #extract useful parameters from pars_slsqp
     alpha_inv = pars_slsqp[0:N_i]
-    mag_inv = np.log10(np.exp(alpha_inv))
-    mag_inv = 2. * (mag_inv - 13.05) / 3. #Mw
-    ml_inv = (mag_inv -1.15) * 3. / 2. #ML
+    mag_inv = utils.m0_to_mag_HK(np.exp(alpha_inv)) #Mw
+    ml_inv = utils.mag_to_ml_munafo(mag_inv) #ML
+    
 
     #build the Params object equivalent to pars_slsqp, but without eps, 
     #to be used to calculate the forward model
@@ -121,6 +119,7 @@ def plot_spectra_comparison(runname=cfg.RUNNAME,
                     M_DST[k] = stat_p.M[k+N_k*s+N_j*N_k*e]
                 F_DST_1 = F_DST[np.where(M_DST==1)]
                 Z_DST_1 = Z_DST[np.where(M_DST==1)]
+                Z_calc_DST_1 = Z_calc_DST[np.where(M_DST==1)]
 
                 if len(F_DST_1) > 0:
                     orid = reverse_orids_dict[e]
@@ -146,7 +145,7 @@ def plot_spectra_comparison(runname=cfg.RUNNAME,
                     plt.yscale('log',base=10.)
                     plt.plot(F_db_v1, Z_db_v1, c='dimgrey', zorder=-1, lw=1)
                     plt.plot(F_DST_1, Z_DST_1, label='Z_true', c = 'blue')
-                    plt.plot(F_DST, Z_calc_DST, c='green', label = 'Inverted FAS', zorder=1, lw=2)
+                    plt.plot(F_DST_1, Z_calc_DST_1, c='green', label = 'Inverted FAS', zorder=1, lw=2)
 
                     plt.title('ev = %s; sta = %s; soil class =%s; M$_L$ = %.1f; R$_{hyp}$ = %.0f km' % (reverse_orids_dict[e], reverse_stas_dict[s], soil_dict[reverse_stas_dict[s]], ml_inv[e], (stat_p.R[N_j*N_k*e + N_k*s]/100000)))
                     plt.legend()

@@ -208,10 +208,18 @@ def fas_invert(runname=cfg.RUNNAME, sptdbpath=cfg.SPTDBPATH,
     else:
         print('SLSQP, bounded, 3-point approx jac')
         start_time = timeit.default_timer()
-        fmin, p_out = minimizer_wrapper(0, handle_func, p_input, stat_p, 
-                                        method='SLSQP', jac='3-point',
-                                        options=DEFAULT_OPTIONS,
-                                        bounds=inv_bounds)
+        if (ref_ampl == 'PURA') or (model_name.startswith('fixA')):
+            fmin, p_out = minimizer_wrapper(0, handle_func, p_input, stat_p, 
+                                            method='SLSQP',
+                                            jac='3-point',
+                                            options=DEFAULT_OPTIONS, 
+                                            bounds=inv_bounds, meanavg=False) 
+        else:
+            fmin, p_out = minimizer_wrapper(0, handle_func, p_input, stat_p, 
+                                            method='SLSQP',
+                                            jac='3-point',
+                                            options=DEFAULT_OPTIONS, 
+                                            bounds=inv_bounds)
         elapsed = timeit.default_timer() - start_time
         print('Elapsed time: ', elapsed)
         print('Cost function of inversion result: ',

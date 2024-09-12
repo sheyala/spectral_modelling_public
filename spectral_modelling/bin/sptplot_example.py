@@ -96,5 +96,8 @@ if 1:
             evstas = evstas.replace(i, '')
         evstas = evstas.split(',')
         for sta in evstas:
-            print(orids[e], ' ', sta)
-            plotspt(orids[e], sta, runname=myrunname)
+            try:
+                print(orids[e], ' ', sta)
+                plotspt(orids[e], sta, runname=myrunname)
+            except:
+                pass

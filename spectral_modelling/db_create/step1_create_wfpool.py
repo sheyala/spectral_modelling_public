@@ -35,8 +35,8 @@ def create_wfpool_sac(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH, evdb=cfg.EVDB,
     """
     Read processed waveforms for selected events and stations 
     and store information separately for each event in the form of pickle files 
-    containing Stream() objects with Radial/Transverse components and 
-    SNR score, for both signal and data.
+    containing Stream() objects with Radial/Transverse components,
+    for both signal and data.
     Duration of signal and noise windows is currently equal and chosen through
     the tdura parameter, as (tP-tdura-1, tP-1) for noise and (tS, tS+tdura) 
     for signal)
@@ -86,7 +86,6 @@ def create_wfpool_sac(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH, evdb=cfg.EVDB,
         outf = open(outpath + '/' + str(evid) + '.pkl', 'wb')
         wfpkl = {'signal':{'R':[],'T':[]}, 
                  'noise':{'R':[],'T':[]}, 
-                 'snr':{'R':[],'T':[]},
                  'stacode':[],
                  'hypodist':[]}
         st_signal_r = Stream()
@@ -131,9 +130,6 @@ def create_wfpool_sac(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH, evdb=cfg.EVDB,
                 wfpkl['stacode'].append(sta)
                 wfpkl['hypodist'].append(assoc_or_ev.iloc[0]['hypodist'])
 
-            snr = utils.getSNR(signal, noise)
-            wfpkl['snr'][orientation].append(snr)
-
         wfpkl['signal']['R'] = st_signal_r
         wfpkl['signal']['T'] = st_signal_t
         wfpkl['noise']['R'] = st_noise_r
@@ -150,8 +146,8 @@ def create_wfpool_mseed(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH,
     """
     Read processed waveforms for selected events and stations 
     and store information separately for each event in the form of pickle files 
-    containing Stream() objects with Radial/Transverse components and 
-    SNR score, for both signal and data.
+    containing Stream() objects with Radial/Transverse components,
+    for both signal and data.
     Duration of signal and noise windows is currently equal and chosen through
     the tdura parameter, as (tP-tdura-1, tP-1) for noise and (tS, tS+tdura) 
     for signal)
@@ -186,7 +182,6 @@ def create_wfpool_mseed(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH,
         outf = open(outpath + '/' + str(evid) + '.pkl', 'wb')
         wfpkl = {'signal':{'R':[],'T':[]}, 
                  'noise':{'R':[],'T':[]}, 
-                 'snr':{'R':[],'T':[]},
                  'stacode':[],
                  'hypodist':[]}
         st_signal_r = Stream()
@@ -278,10 +273,6 @@ def create_wfpool_mseed(inpath_wf=cfg.WFPATH, outpath=cfg.WFDBPATH,
             st_noise_t.append(noise_t)
             wfpkl['stacode'].append(sta)
             wfpkl['hypodist'].append(assoc_or_ev.iloc[0]['hypodist'])
-            snr_r = utils.getSNR(signal_r, noise_r)
-            snr_t = utils.getSNR(signal_t, noise_t)
-            wfpkl['snr']['R'].append(snr_r)
-            wfpkl['snr']['T'].append(snr_t)
 
         wfpkl['signal']['R'] = st_signal_r
         wfpkl['signal']['T'] = st_signal_t

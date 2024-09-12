@@ -1,4 +1,6 @@
 # ignore some folders
+.gitignore
+spectral_modelling/__init__.pyc
 spectral_modelling/__pycache__
 spectral_modelling/db_create/__pycache_
 spectral_modelling/bin/massdownloader.py

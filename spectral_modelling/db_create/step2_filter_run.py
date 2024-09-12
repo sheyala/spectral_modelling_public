@@ -8,7 +8,7 @@ from spectral_modelling.utils import config as cfg
 
 def filter_evstas(inpath_wf=cfg.WFDBPATH,outpath=cfg.DBPATH,dbname=cfg.DBNAME,
                   eventdb=cfg.EVDB, stationdb=cfg.STADB, runname=cfg.RUNNAME, 
-                  snrmin=cfg.SNRMIN, nevsmin=cfg.MIN_EVS, nstamin=cfg.MIN_STAS, 
+                  nevsmin=cfg.MIN_EVS, nstamin=cfg.MIN_STAS, 
                   min_hypodist=cfg.MIN_HYPODIST, max_hypodist=cfg.MAX_HYPODIST,
                   verbose=0):
     """
@@ -33,7 +33,6 @@ def filter_evstas(inpath_wf=cfg.WFDBPATH,outpath=cfg.DBPATH,dbname=cfg.DBNAME,
     eventdb    csv file containing info on inital pool of events
     stationdb  csv file containing info on inital pool of stations
     runname    name of the run (associated to choices on constraints)
-    snrmin     min signal-to-noise ratio for each record
     nevsmin    min n. of events recorded by each station
     nstamin    min n. of stations for each event
     min_hypodist, max_hypodist minimum and maximum hypocentral distance to be 
@@ -83,18 +82,12 @@ def filter_evstas(inpath_wf=cfg.WFDBPATH,outpath=cfg.DBPATH,dbname=cfg.DBNAME,
                 print("event with evid ", evids_inst[e], "not in inpath_wf")
             continue
 
-        # index to filter by snr score
-        indR = np.where(np.array(wfpkl['snr']['R'], copy=False) > snrmin)[0]
-        indT = np.where(np.array(wfpkl['snr']['T'], copy=False) > snrmin)[0]
-        ind_snr = list(set(indT) & set(indR))
-
         # index to filter by hypocentral distance
         indD1 = np.where(np.array(wfpkl['hypodist'], copy=False) > min_hypodist)[0]
         indD2 = np.where(np.array(wfpkl['hypodist'], copy=False) < max_hypodist)[0]
         ind_hypo = list(set(indD1) & set(indD2))
 
-        ind_filt = list(set(ind_snr) & set(ind_hypo))
-        filt_sta = [wfpkl['stacode'][i] for i in ind_filt]
+        filt_sta = [wfpkl['stacode'][i] for i in ind_hypo]
 
         for j in range(len(filt_sta)):
             init_match.append([evids[e],filt_sta[j]])
@@ -199,8 +192,8 @@ def filter_evstas(inpath_wf=cfg.WFDBPATH,outpath=cfg.DBPATH,dbname=cfg.DBNAME,
 
         with open(f_out_readme,"w") as f:
             f.write(f'{"#README: run name = ":<20}{runname}\n')
-            f.write(f'{"#snrmin":<9}{"min_hypodist":<14}{"max_hypodist":<14}{"nstamin":<9}{"nevsmin":<9}\n')
-            f.write(f'{snrmin:<9}{min_hypodist:<14}{max_hypodist:<14}{nstamin:<9}{nevsmin:<9}\n')
+            f.write(f'{"min_hypodist":<14}{"max_hypodist":<14}{"nstamin":<9}{"nevsmin":<9}\n')
+            f.write(f'{min_hypodist:<14}{max_hypodist:<14}{nstamin:<9}{nevsmin:<9}\n')
 
     return updated_status
 
