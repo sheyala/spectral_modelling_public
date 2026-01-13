@@ -14,12 +14,9 @@ import spectral_modelling.utils.config as cfg
 def minimizer_tool(fcn, params_in, fcn_args, bounds=None, method='CG',
                    jac=None, tol=1.e-08, options=None, diff_step=None,
                    jac_sparsity=None, meanavg=True):
-    """Perform a fit of a set of parameters by minimizing an objective
+    """
+    Perform a fit of a set of parameters by minimizing an objective
     (cost) function using one of the several available methods in scipy.
-
-    The minimize function takes an objective function to be minimized,
-    a dictionary (:class:`~myClass.Params`) containing the model
-    parameters, and several optional arguments.
     """
 
     stat_params, index_v, p_fixed, index_f, N_gamma, N_delta = fcn_args
@@ -30,28 +27,27 @@ def minimizer_tool(fcn, params_in, fcn_args, bounds=None, method='CG',
     N_ev = stat_params.N_ev
     N_sta = stat_params.N_sta
 
-    # define freq.-independent amplification relative to the network
-    # average
-    # NB1 now it uses the mean avg on rock (class A), as defined in
-    #     utils.py
-    # NB2 the corresponding jacobian can also be calculated and added to
-    #     the site_avg dictionary as 'jac' (optional)
+   
 
-    def constraint_A(amps_in, N_ev, N_sta, N_gamma, N_delta, index_f, p_fixed):
-        amps_input = utils.insert_elem(amps_in, index_f, p_fixed)      
-        flatindex = utils.stas_flat()
-        amps_sum = 0.
-        for i in flatindex:
-            amps_sum = amps_sum + amps_input[2*N_ev+N_gamma+N_delta+i]
-        return amps_sum
+    
+    flat_indices_precalculated = utils.stas_flat()
 
+   
+    def constraint_A(amps_in, N_ev, N_sta, N_gamma, N_delta, index_f, p_fixed, flat_indices):
+        amps_input = utils.insert_elem(amps_in, index_f, p_fixed)
+        
+        param_indices = 2*N_ev + N_gamma + N_delta + np.array(flat_indices)
+        return np.sum(amps_input[param_indices])
+
+    
     site_avg = ({'type': 'eq',
                  'fun': constraint_A,
-                 'args': (N_ev, N_sta, N_gamma, N_delta, index_f, p_fixed)
+                 'args': (N_ev, N_sta, N_gamma, N_delta, index_f, p_fixed, flat_indices_precalculated)
                  })
 
-    # -----------------------------------------
-    # perform minimization
+  
+
+    
 
     if method in cfg.MINIMIZE_METHODS_BOUNDS:
         mybounds = opt.Bounds(np.array(bounds[0]), np.array(bounds[1]))
@@ -65,50 +61,41 @@ def minimizer_tool(fcn, params_in, fcn_args, bounds=None, method='CG',
                 result = opt.minimize(fcn, pars, args=fcn_args,
                                       bounds=mybounds, method=method, jac=jac,
                                       tol=tol, options=options)
-
         else:
-            result = opt.minimize(fcn, pars, args=fcn_args, bounds=mybounds, 
+            result = opt.minimize(fcn, pars, args=fcn_args, bounds=mybounds,
                                   method=method, jac=jac, tol=tol,
                                   options=options)
 
     elif method in cfg.MINIMIZE_METHODS_NOBOUNDS:
-        result = opt.minimize(fcn, pars, args=fcn_args, method=method, jac=jac, 
-                              tol=tol, options=options)            
-       
+        result = opt.minimize(fcn, pars, args=fcn_args, method=method, jac=jac,
+                              tol=tol, options=options)
+
     elif method == "least_squares":
         if jac is None:
-            jac = '2-point'           
+            jac = '2-point'
             
         if diff_step is not None:
-            result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds, 
-                                       jac=jac, ftol=tol, diff_step=diff_step, 
-                                       verbose=2)
-
-        if jac_sparsity is not None:
-            result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds, 
-                                       jac_sparsity=jac_sparsity, ftol=tol, 
-                                       verbose=2)
-
-        else:
-            result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds, 
-                                       jac=jac, ftol=tol, verbose=2)
-
+            result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds,
+                                   jac=jac, ftol=tol, diff_step=diff_step,
+                                   verbose=2)
+    elif jac_sparsity is not None:
+        result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds,
+                                   jac_sparsity=jac_sparsity, ftol=tol,
+                                   verbose=2)
     else:
-        raise utils.MinimizeException("Method not recognized")
-    
-    # -----------------------------------------
-    # build output Params object
+        result = opt.least_squares(fcn, pars, args=fcn_args, bounds=bounds,
+                                   jac=jac, ftol=tol, verbose=2)
+
 
     xout = result.x
     xout_all = utils.insert_elem(xout, index_f, p_fixed)
-
     params_out = utils.array_to_Param(xout_all, stat_params, N_gamma, N_delta)
 
     return result, params_out
-       
 
-def minimizer_wrapper(index, fcn, p_input, stat_p, method='CG', jac=None, 
-                      tol=1.e-08, options=None, diff_step=None, 
+
+def minimizer_wrapper(index, fcn, p_input, stat_p, method='CG', jac=None,
+                      tol=1.e-08, options=None, diff_step=None,
                       jac_sparsity=None, bounds=None, meanavg=True):
     """Actual wrapper; uses bounds (when applicable) to keep fixed
        parameters actually locked.
@@ -144,10 +131,10 @@ def minimizer_wrapper(index, fcn, p_input, stat_p, method='CG', jac=None,
             lower_bounds.append(lbounds_v[i])
             upper_bounds.append(ubounds_v[i])
 
-    res, p_out = minimizer_tool(fcn, start_vals, fcn_args, 
-                                bounds=(lower_bounds, upper_bounds), 
-                                method=method, jac=jac, tol=tol, 
-                                options=options, diff_step=diff_step, 
+    res, p_out = minimizer_tool(fcn, start_vals, fcn_args,
+                                bounds=(lower_bounds, upper_bounds),
+                                method=method, jac=jac, tol=tol,
+                                options=options, diff_step=diff_step,
                                 jac_sparsity=jac_sparsity, meanavg=meanavg)
 
     p_out.vary_all(True)
