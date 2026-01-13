@@ -11,80 +11,59 @@ from spectral_modelling.model_and_invert.fas_log import ln_fas
 
 def avg_mean_residual(stat_p, Z_calc):
     """
-    Calculates freq.-dependent site amplification as geometric average of the
-    inversion residuals (GAVG) and the related geometric standard deviation 
-    (GSD), for those stations that have at least cfg.MIN_EVS recordings
+    Calculate site amplification and standard deviation in a vectorized manner,
+    maintaining the original logic that filters frequencies based on a
+    minimum number of events (`cfg.MIN_EVS`).
+    """
+    N_ev, N_sta, N_freq = stat_p.N_ev, stat_p.N_sta, stat_p.N_freq
+
+   
+    mask_3d = stat_p.M.reshape(N_ev, N_sta, N_freq)
+    data_3d = stat_p.data.reshape(N_ev, N_sta, N_freq)
+    model_3d = Z_calc.reshape(N_ev, N_sta, N_freq)
+
+  
+    valid_counts = np.sum(mask_3d, axis=0)  
+   
+    filter_mask = valid_counts >= cfg.MIN_EVS
+
+   
+    with np.errstate(divide='ignore', invalid='ignore'):
+        ratio = np.divide(data_3d, model_3d, out=np.ones_like(data_3d), where=mask_3d == 1)
+
+  
+    log_ratio_sum = np.sum(np.log(ratio), axis=0)
+    
+    
+    log_gavg = np.zeros_like(valid_counts, dtype=float)
+    np.divide(log_ratio_sum, valid_counts, out=log_gavg, where=filter_mask)
+    
+    GAVG = np.exp(log_gavg)
+
+   
+    log_ratio_sq_diff = np.square(np.log(ratio) - log_gavg)
+   
+    sum_sq_diff = np.sum(log_ratio_sq_diff * mask_3d, axis=0)
+    
+    
+    gsd_variance = np.zeros_like(valid_counts, dtype=float)
+    np.divide(sum_sq_diff, valid_counts, out=gsd_variance, where=filter_mask)
+
+    GSD = np.exp(np.sqrt(gsd_variance))
+
+    
+    return GAVG.flatten(), GSD.flatten()
+
+
+
+def fdsiteamp(runconfig, runname=cfg.RUNNAME, sptdbpath=cfg.SPTDBPATH, hcomponent='R', plot=True):
+    """
+    Questa funzione calcola e salva le funzioni di amplificazione di sito a(f).
+    Utilizza la funzione ottimizzata avg_mean_residual.
+    (Il resto della funzione rimane invariato, ma beneficia delle performance migliorate)
     """
 
-    N_i = stat_p.N_ev
-    N_j = stat_p.N_sta
-    N_k = stat_p.N_freq
-    GAVG = np.ones((N_j * N_k))
-    GSD = np.ones((N_j * N_k))
-
-    for s in range(N_j):
-        i = 0
-        mask_matrix = np.zeros((N_i, N_k))
-        aj_matrix = np.ones((N_i, N_k))
-
-        for e in range(N_i):
-            F = np.zeros(N_k)
-            Z = np.zeros(N_k)
-            M = np.zeros(N_k)
-            Z_c = np.zeros(N_k)
-            for k in range(N_k):
-                F[k] = stat_p.F[k + N_k * s + N_j * N_k * e]
-                Z[k] = stat_p.data[k + N_k * s + N_j * N_k * e]
-                M[k] = stat_p.M[k + N_k * s + N_j * N_k * e]
-                Z_c[k] = Z_calc[k + N_k * s + N_j * N_k * e]
-            index = np.where(M == 1)
-            if len(index) > 0:
-                aj_matrix[i][index] = (Z / Z_c)[index]
-                mask_matrix[i][:] = M
-                i += 1
-
-        mask = np.sum(mask_matrix, axis=0)
-        index5 = np.where(mask >= cfg.MIN_EVS)
-        mask_5 = mask[index5]
-
-        gmean_5 = np.ones_like(mask_5)
-        gsd_5 = np.zeros_like(mask_5)
-
-        aj_matrix_5 = aj_matrix[:, index5[0]]
-        for k in range(len(mask_5)):
-            aa = aj_matrix_5[:, k]
-            bb = aa[np.where(aa != 1.)]
-            gmean_5[k] = np.power(np.prod(bb, axis=0), 1. / mask_5[k])
-
-        freqs_5 = stat_p.freqs[index5]
-
-        # NOTE maybe join with previous cycle
-        for k in range(len(mask_5)):
-            aa = aj_matrix_5[:, k]
-            bb = aa[np.where(aa != 1.)]
-            gsd_5[k] = np.sum((np.log(bb / gmean_5[k])) ** 2, axis=0) / \
-                       mask_5[k]
-            gsd_5[k] = np.exp(np.sqrt(gsd_5[k]))
-
-        for k in range(N_k):
-            f = stat_p.freqs[k]
-            if f in freqs_5:
-                ind_f = np.where(freqs_5 == f)
-                GAVG[k + N_k * s] = gmean_5[ind_f][0]
-                GSD[k + N_k * s] = gsd_5[ind_f][0]
-
-    return GAVG, GSD
-
-
-
-def fdsiteamp(runconfig, runname=cfg.RUNNAME, sptdbpath=cfg.SPTDBPATH,
-              hcomponent='R', plot=True):
-    """
-    This feature calculates and saves the frequency-dependent site 
-    amplification functions a(f) obtained from residuals.
-    Optionally, it creates plots for a(f) and A*a(f) functions.
-    """
-
+   
     # OPEN INPUT FILEs
     model_name = utils.read_run_label(runconfig)[1]
     with open(cfg.SYNTHPARS_PATH + '/' + runname + '_' + model_name + '.pkl', 'rb') as f:
@@ -135,12 +114,11 @@ def fdsiteamp(runconfig, runname=cfg.RUNNAME, sptdbpath=cfg.SPTDBPATH,
         Z_true = stat_p_s.data.copy()
 
     stat_p.set_data(Z_true)
-
+    
+    
     GAVG, GSD = avg_mean_residual(stat_p, Z_calc)
 
 
-    #################
-    # save mean residuals (f, a(f), associated sigma) for each station
     dirpath = runpath + '/meanresiduals'
     if os.path.exists(dirpath):
         shutil.rmtree(dirpath)
